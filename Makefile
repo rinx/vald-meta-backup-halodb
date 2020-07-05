@@ -100,6 +100,38 @@ $(JAVA_ROOT)/io/envoyproxy/pgv/validate/ValidateGrpc.java: proto/deps $(JAVA_ROO
 		--grpc-java_out=$(JAVA_ROOT) \
 		$(PROTO_ROOT)/validate.proto
 
+XMS = 2g
+XMX = 7g
+
+TARGET_JAR=target/vald-meta-backup-halodb-0.1.0-SNAPSHOT-standalone.jar
+
+$(TARGET_JAR):
+	lein uberjar
+
+vald-meta-backup-halodb: \
+	$(TARGET_JAR)
+	native-image \
+	-jar $(TARGET_JAR) \
+	-H:Name=vald-meta-backup-halodb \
+	-H:+ReportExceptionStackTraces \
+	-H:Log=registerResource: \
+	-H:ReflectionConfigurationFiles=reflection.json \
+	-H:+RemoveSaturatedTypeFlows \
+	--enable-url-protocols=http,https \
+	--enable-all-security-services \
+	--install-exit-handlers \
+	-H:+JNI \
+	--verbose \
+	--no-fallback \
+	--no-server \
+	--report-unsupported-elements-at-runtime \
+	--initialize-at-build-time \
+	--allow-incomplete-classpath \
+	--static \
+	-J-Dclojure.spec.skip-macros=true \
+	-J-Dclojure.compiler.direct-linking=true \
+	-J-Xms$(XMS) \
+	-J-Xmx$(XMX)
 
 .PHONY: proto/deps
 ## install proto deps

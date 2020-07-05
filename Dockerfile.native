@@ -1,0 +1,65 @@
+FROM golang:latest AS go
+
+FROM rinx/grpc-java-builder:latest AS grpc-java-builder
+LABEL maintainer "rinx <rintaro.okamura@gmail.com>"
+
+ENV GOPATH /go
+ENV GOROOT /usr/local/go
+ENV GO111MODULE on
+
+RUN apt-get update \
+    && apt-get install -y \
+    git \
+    curl \
+    gcc \
+    musl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=go /usr/local/go/src  $GOROOT/src
+COPY --from=go /usr/local/go/lib  $GOROOT/lib
+COPY --from=go /usr/local/go/pkg  $GOROOT/pkg
+COPY --from=go /usr/local/go/misc $GOROOT/misc
+COPY --from=go /usr/local/go/bin  $GOROOT/bin
+
+COPY --from=go /go $GOPATH
+RUN chmod a+rw -R /go
+
+ENV PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+RUN mkdir -p /work
+
+WORKDIR /work
+
+COPY Makefile .
+COPY versions .
+
+RUN make proto
+
+FROM oracle/graalvm-ce:20.1.0-java8 AS builder
+LABEL maintainer "rinx <rintaro.okamura@gmail.com>"
+
+RUN gu install native-image
+
+RUN curl -o lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein \
+    && chmod a+x lein \
+    && cp lein /usr/local/bin/lein
+
+RUN mkdir -p /usr/src/app/src
+WORKDIR /usr/src/app
+
+COPY Makefile /usr/src/app/
+COPY reflection.json /usr/src/app/
+COPY project.clj /usr/src/app/
+RUN lein deps
+COPY src/vald_meta_backup_halodb /usr/src/app/src/vald_meta_backup_halodb
+COPY resources /usr/src/app/resources
+COPY --from=grpc-java-builder /work/src/main /usr/src/app/src/main
+
+RUN make vald-meta-backup-halodb
+
+FROM scratch
+LABEL maintainer "rinx <rintaro.okamura@gmail.com>"
+
+COPY --from=builder /usr/src/app/vald-meta-backup-halodb /vald-meta-backup-halodb
+
+ENTRYPOINT ["/vald-meta-backup-halodb"]

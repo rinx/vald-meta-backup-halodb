@@ -20,4 +20,8 @@
   :java-source-paths ["src/main/java"]
   :boot-dependencies [[com.google.protobuf/protobuf-java "3.12.2"]]
   :profiles {:uberjar {:aot :all
-                       :main vald-meta-backup-halodb.core}})
+                       :main vald-meta-backup-halodb.core}
+             :native {:aot :all
+                      :dependencies [[org.graalvm.nativeimage/svm "20.1.0"]]
+                      :java-source-paths ["src/substitutes/java"]
+                      :main vald-meta-backup-halodb.core}})

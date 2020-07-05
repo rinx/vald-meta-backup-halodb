@@ -106,7 +106,7 @@ XMX = 7g
 TARGET_JAR=target/vald-meta-backup-halodb-0.1.0-SNAPSHOT-standalone.jar
 
 $(TARGET_JAR):
-	lein uberjar
+	lein with-profiles +native uberjar
 
 vald-meta-backup-halodb: \
 	$(TARGET_JAR)

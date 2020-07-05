@@ -1,17 +1,15 @@
 {:grpc
-   {:name "gRPC"
-    :port 8081}
-   :liveness
-   {:name "liveness"
-    :port 3000
-    :prestop-duration 10
-    :routes [{:route "/liveness"
-              :body "ok"}
-             {:route "/shutdown"
-              :shutdown true}]}
-   :readiness
-   {:name "readiness"
-    :port 3001
-    :prestop-duration 10
-    :routes [{:route "/readiness"
-              :body "ok"}]}}
+ {:name "gRPC"
+  :port 8081}
+ :liveness
+ {:name "liveness"
+  :port 3000
+  :prestop-duration 10
+  :routes [{:route "/liveness"
+            :body "ok"}]}
+ :readiness
+ {:name "readiness"
+  :port 3001
+  :prestop-duration 10
+  :routes [{:route "/readiness"
+            :body "ok"}]}}

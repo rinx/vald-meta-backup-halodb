@@ -46,6 +46,7 @@ WORKDIR /usr/src/app
 COPY project.clj /usr/src/app/
 RUN lein deps
 COPY src/vald_meta_backup_halodb /usr/src/app/src/vald_meta_backup_halodb
+COPY resources /usr/src/app/resources
 COPY --from=grpc-java-builder /work/src/main /usr/src/app/src/main
 RUN mv "$(lein uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" app-standalone.jar
 

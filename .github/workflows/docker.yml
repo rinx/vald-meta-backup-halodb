@@ -2,10 +2,10 @@ name: Build docker image
 on:
   push:
     paths:
-      - .github/workflows/docker.yml
-      - Dockerfile
-      - src/vald-meta-backup-halodb/**
-      - project.clj
+      - ".github/workflows/docker.yml"
+      - "Dockerfile"
+      - "src/**"
+      - "project.clj"
 
 jobs:
   build:

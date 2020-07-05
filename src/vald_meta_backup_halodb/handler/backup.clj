@@ -4,7 +4,8 @@
    [clojure.java.data :refer [from-java to-java]]
    [clj-halodb.core :as halodb]
    [vald-meta-backup-halodb.model.backup]
-   [vald-meta-backup-halodb.model.common])
+   [vald-meta-backup-halodb.model.common]
+   [vald-meta-backup-halodb.model.grpc :as grpc])
   (:refer-clojure :exclude [remove])
   (:import
    [org.vdaas.vald.manager.backup BackupGrpc$BackupImplBase]
@@ -37,14 +38,16 @@
         mv (get-mv db uuid)]
     (if mv
       (to-java Backup$Compressed$MetaVector mv)
-      (throw (Exception. "not found")))))
+      (throw
+       (grpc/not-found (Exception. "not found"))))))
 
 (defn locations [db ^Backup$Locations$Request req]
   (let [uuid (:uuid (from-java req))
         mv (get-mv db uuid)]
     (if mv
       (to-java Info$IPs (:ips mv))
-      (throw (Exception. "not found")))))
+      (throw
+       (grpc/not-found (Exception. "not found"))))))
 
 (defn register [db ^Backup$Compressed$MetaVector mv]
   (let [mv (from-java mv)

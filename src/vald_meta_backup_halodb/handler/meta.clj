@@ -4,7 +4,8 @@
    [clojure.java.data :refer [from-java to-java]]
    [clj-halodb.core :as halodb]
    [vald-meta-backup-halodb.model.meta]
-   [vald-meta-backup-halodb.model.common])
+   [vald-meta-backup-halodb.model.common]
+   [vald-meta-backup-halodb.model.grpc :as grpc])
   (:import
    [org.vdaas.vald.meta MetaGrpc$MetaImplBase]
    [org.vdaas.vald.payload Meta$Key Meta$Val Meta$Keys Meta$Vals]
@@ -36,7 +37,8 @@
         v (get-v db k)]
     (if v
       (to-java Meta$Val {:val v})
-      (throw (Exception. "not found")))))
+      (throw
+       (grpc/not-found (Exception. "not found"))))))
 
 (defn get-metas [db ^Meta$Keys ks]
   (let [ks (from-java ks)]
@@ -49,7 +51,8 @@
         k (get-k db v)]
     (if k
       (to-java Meta$Key {:key k})
-      (throw (Exception. "not found")))))
+      (throw
+       (grpc/not-found (Exception. "not found"))))))
 
 (defn get-metas-inverse [db ^Meta$Vals vs]
   (let [vs (from-java vs)]

@@ -19,7 +19,5 @@
   :plugins [[info.sunng/lein-bootclasspath-deps "0.3.0"]]
   :java-source-paths ["src/main/java"]
   :boot-dependencies [[com.google.protobuf/protobuf-java "3.12.2"]]
-  :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.11"]]
-                   :source-paths ["dev"]}
-             :uberjar {:aot :all
+  :profiles {:uberjar {:aot :all
                        :main vald-meta-backup-halodb.core}})

@@ -130,6 +130,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.util.internal.logging.Log4JLogger \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ReferenceCountedOpenSslEngine \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.DefaultHttp2FrameWriter \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	--static \

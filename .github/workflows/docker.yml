@@ -9,6 +9,7 @@ on:
       - "src/**"
       - "project.clj"
       - "reflection.json"
+      - "resources.json"
 
 jobs:
   build:

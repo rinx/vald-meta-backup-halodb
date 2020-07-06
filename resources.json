@@ -1,0 +1,13 @@
+{
+  "resources":[
+    {"pattern":"META-INF/services/jdk.vm.ci.hotspot.HotSpotJVMCIBackendFactory"},
+    {"pattern":"META-INF/services/jdk.vm.ci.services.JVMCIServiceLocator"},
+    {"pattern":"clojure/core.clj"},
+    {"pattern":"clojure/core/server.clj"},
+    {"pattern":"clojure/core/server__init.class"},
+    {"pattern":"clojure/core__init.class"},
+    {"pattern":"vald_meta_backup_halodb/core.clj"},
+    {"pattern":"vald_meta_backup_halodb/core__init.class"},
+    {"pattern":"not-found.html"}
+  ]
+}

@@ -116,6 +116,7 @@ vald-meta-backup-halodb: \
 	-H:+ReportExceptionStackTraces \
 	-H:Log=registerResource: \
 	-H:ReflectionConfigurationFiles=reflection.json \
+	-H:ResourceConfigurationFiles=resources.json \
 	-H:+RemoveSaturatedTypeFlows \
 	--enable-url-protocols=http,https \
 	--enable-all-security-services \

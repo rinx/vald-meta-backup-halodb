@@ -125,6 +125,11 @@ vald-meta-backup-halodb: \
 	--no-fallback \
 	--no-server \
 	--report-unsupported-elements-at-runtime \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.SSL \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.util.internal.logging.Log4JLogger \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ReferenceCountedOpenSslEngine \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	--static \

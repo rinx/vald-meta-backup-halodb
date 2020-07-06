@@ -49,6 +49,7 @@ WORKDIR /usr/src/app
 
 COPY Makefile /usr/src/app/
 COPY reflection.json /usr/src/app/
+COPY resources.json /usr/src/app/
 COPY project.clj /usr/src/app/
 RUN lein deps
 COPY src/vald_meta_backup_halodb /usr/src/app/src/vald_meta_backup_halodb

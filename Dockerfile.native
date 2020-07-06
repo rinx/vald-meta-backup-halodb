@@ -35,7 +35,7 @@ COPY versions .
 
 RUN make proto
 
-FROM oracle/graalvm-ce:20.1.0-java11 AS builder
+FROM oracle/graalvm-ce:20.1.0-java8 AS builder
 LABEL maintainer "rinx <rintaro.okamura@gmail.com>"
 
 RUN gu install native-image

@@ -134,6 +134,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.DefaultHttp2FrameWriter \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2CodecUtil \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.util.ThreadLocalInsecureRandom \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	--static \

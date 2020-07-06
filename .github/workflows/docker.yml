@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - ".github/workflows/docker.yml"
+      - "Makefile"
       - "Dockerfile"
       - "Dockerfile.native"
       - "src/**"

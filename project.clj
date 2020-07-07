@@ -22,6 +22,7 @@
   :profiles {:uberjar {:aot :all
                        :main vald-meta-backup-halodb.core}
              :native {:aot :all
-                      :dependencies [[org.graalvm.nativeimage/svm "20.1.0"]]
+                      :dependencies [[org.graalvm.nativeimage/svm "20.1.0"]
+                                     [borkdude/clj-reflector-graal-java11-fix "0.0.1-graalvm-20.1.0"]]
                       :java-source-paths ["src/substitutes/java"]
                       :main vald-meta-backup-halodb.core}})

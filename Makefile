@@ -126,7 +126,6 @@ vald-meta-backup-halodb: \
 	--verbose \
 	--no-fallback \
 	--no-server \
-	--allow-incomplete-classpath \
 	--report-unsupported-elements-at-runtime \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.SSL \
@@ -140,7 +139,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Socket \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.IovArray \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventLoop \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Errors
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Errors \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	$(OPTS) \

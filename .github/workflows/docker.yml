@@ -6,6 +6,7 @@ on:
       - "Makefile"
       - "Dockerfile"
       - "Dockerfile.native"
+      - "Dockerfile.static"
       - "src/**"
       - "project.clj"
       - "reflection.json"
@@ -45,3 +46,19 @@ jobs:
     - name: tag and push to DockerHub
       run: |
         docker push rinx/vald-meta-backup-halodb-native:latest
+  build-static:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: |
+        docker build -t rinx/vald-meta-backup-halodb-native-static -f Dockerfile.static .
+    - name: login to DockerHub
+      run: |
+        echo ${DOCKERHUB_PASS} | docker login --username ${DOCKERHUB_USER} --password-stdin
+      env:
+        DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+        DOCKERHUB_PASS: ${{ secrets.DOCKERHUB_PASS }}
+    - name: tag and push to DockerHub
+      run: |
+        docker push rinx/vald-meta-backup-halodb-native-static:latest

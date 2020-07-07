@@ -138,7 +138,6 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
-	--static \
 	$(OPTS) \
 	-J-Dclojure.spec.skip-macros=true \
 	-J-Dclojure.compiler.direct-linking=true \

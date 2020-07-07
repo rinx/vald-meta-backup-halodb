@@ -58,7 +58,12 @@ COPY src/substitutes /usr/src/app/src/substitutes
 COPY resources /usr/src/app/resources
 COPY --from=grpc-java-builder /work/src/main /usr/src/app/src/main
 
-RUN make vald-meta-backup-halodb
+RUN curl -o netty-transport-native-epoll.jar https://repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.50.Final/netty-transport-native-epoll-4.1.50.Final-linux-x86_64.jar \
+    && jar xf netty-transport-native-epoll.jar \
+    && mkdir -p clibraries/linux-amd64 \
+    && cp META-INF/native/libnetty_transport_native_epoll_x86_64.so clibraries/linux-amd64/
+
+RUN make OPTS="-H:CLibraryPth=clibraries/linux-amd64/" vald-meta-backup-halodb
 
 FROM ubuntu:devel
 LABEL maintainer "rinx <rintaro.okamura@gmail.com>"

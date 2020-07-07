@@ -126,6 +126,7 @@ vald-meta-backup-halodb: \
 	--verbose \
 	--no-fallback \
 	--no-server \
+	--report-unsupported-elements-at-runtime \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.SSL \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine \
@@ -136,6 +137,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.util.ThreadLocalInsecureRandom \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier \
 	--initialize-at-build-time \
+	--allow-incomplete-classpath \
 	--static \
 	$(OPTS) \
 	-J-Dclojure.spec.skip-macros=true \

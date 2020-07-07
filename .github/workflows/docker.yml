@@ -10,6 +10,7 @@ on:
       - "project.clj"
       - "reflection.json"
       - "resources.json"
+      - "jni.json"
 
 jobs:
   build:

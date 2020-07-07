@@ -63,7 +63,7 @@ RUN curl -o netty-transport-native-epoll.jar https://repo1.maven.org/maven2/io/n
     && mkdir -p clibraries/linux-amd64 \
     && cp META-INF/native/libnetty_transport_native_epoll_x86_64.so clibraries/linux-amd64/
 
-RUN make OPTS="-H:CLibraryPth=clibraries/linux-amd64/" vald-meta-backup-halodb
+RUN make OPTS="--static -H:CLibraryPath=clibraries/linux-amd64/" vald-meta-backup-halodb
 
 FROM ubuntu:devel
 LABEL maintainer "rinx <rintaro.okamura@gmail.com>"

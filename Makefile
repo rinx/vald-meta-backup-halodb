@@ -139,6 +139,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	--static \
+	$(OPTS) \
 	-J-Dclojure.spec.skip-macros=true \
 	-J-Dclojure.compiler.direct-linking=true \
 	-J-Xms$(XMS) \

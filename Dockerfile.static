@@ -65,7 +65,7 @@ RUN curl -o netty-transport-native-epoll.jar https://repo1.maven.org/maven2/io/n
     && cp META-INF/native/libnetty_transport_native_epoll_x86_64.so clibraries/linux-amd64/
 RUN curl -L -o musl.tar.gz https://github.com/gradinac/musl-bundle-example/releases/download/v1.0/musl.tar.gz \
     && tar xvzf musl.tar.gz
-RUN make OPTS="--static -Djava.library.path=clibraries/linux-amd64/ -Dio.netty.native.workdir=clibraries/linux-amd64/ -H:CLibraryPath=clibraries/linux-amd64/ -H:UseMuslC=bundle/" vald-meta-backup-halodb
+RUN make OPTS="--static -Djava.library.path=clibraries/linux-amd64 -Dio.netty.native.workdir=clibraries/linux-amd64 -H:CLibraryPath=clibraries/linux-amd64 -H:UseMuslC=bundle" vald-meta-backup-halodb
 
 FROM scratch
 LABEL maintainer "rinx <rintaro.okamura@gmail.com>"

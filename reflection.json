@@ -28,21 +28,21 @@
     "allPublicMethods": true
   },
   {
-    "name": "io.netty.channel.socket.nio.NioSocketChannel",
+    "name": "io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel",
     "allDeclaredConstructors": true,
     "allPublicConstructors": true,
     "allDeclaredMethods": true,
     "allPublicMethods": true
   },
   {
-    "name": "io.netty.channel.socket.nio.NioServerSocketChannel",
+    "name": "io.grpc.netty.shaded.io.netty.channel.socket.nio.NioServerSocketChannel",
     "allDeclaredConstructors": true,
     "allPublicConstructors": true,
     "allDeclaredMethods": true,
     "allPublicMethods": true
   },
   {
-    "name": "io.netty.channel.epoll.Native",
+    "name": "io.grpc.netty.shaded.io.netty.channel.epoll.Native",
     "allDeclaredConstructors": true,
     "allPublicConstructors": true,
     "allDeclaredMethods": true,

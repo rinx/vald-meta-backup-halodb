@@ -119,6 +119,8 @@ vald-meta-backup-halodb: \
 	-H:ResourceConfigurationFiles=resources.json \
 	-H:JNIConfigurationFiles=jni.json \
 	-H:+RemoveSaturatedTypeFlows \
+	-H:+PrintClassInitialization \
+	-H:+TraceClassInitialization \
 	--enable-url-protocols=http,https \
 	--enable-all-security-services \
 	--install-exit-handlers \

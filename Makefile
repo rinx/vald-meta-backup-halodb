@@ -154,7 +154,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.PreferredAddressTypeComparator$$1 \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider \
 	--initialize-at-run-time=com.google.protobuf.ExtensionRegistryFactory \
-	--initialize-at-run-time=io.grpc.Server \
+	--initialize-at-run-time=io.grpc.netty.Utils \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	$(OPTS) \

@@ -141,6 +141,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Socket \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.IovArray \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventLoop \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.Native \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Errors \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \

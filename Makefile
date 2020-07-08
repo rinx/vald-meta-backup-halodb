@@ -138,7 +138,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2CodecUtil \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.util.ThreadLocalInsecureRandom \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.LinuxSocket \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventLoop \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	$(OPTS) \

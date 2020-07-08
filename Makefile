@@ -130,20 +130,30 @@ vald-meta-backup-halodb: \
 	--no-server \
 	--report-unsupported-elements-at-runtime \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.SSL \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.util.internal.logging.Log4JLogger \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ReferenceCountedOpenSslEngine \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.DefaultHttp2FrameWriter \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2CodecUtil \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.util.ThreadLocalInsecureRandom \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2ServerUpgradeCodec \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.CleartextHttp2ServerUpgradeHandler \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http.websocketx.extensions.compression.DeflateDecoder \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2ConnectionHandler \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.SSL \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.util.internal.logging.Log4JLogger \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.util.NetUtil \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.DefaultChannelId \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Socket \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.IovArray \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventLoop \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventArray \
-	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.Native \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Errors \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.Limits \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.unix.IovArray \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.socket.InternetProtocolFamily \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.HostsFileEntriesResolver \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.DnsNameResolver \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.DnsServerAddressStreamProviders \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.PreferredAddressTypeComparator$$1 \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider \
+	--initialize-at-run-time=com.google.protobuf.ExtensionRegistryFactory \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \
 	$(OPTS) \

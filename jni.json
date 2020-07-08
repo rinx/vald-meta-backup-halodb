@@ -2,108 +2,53 @@
   {
     "name":"java.lang.ClassLoader",
     "methods":[
-      {"name":"getPlatformClassLoader","parameterTypes":[] }, 
+      {"name":"getPlatformClassLoader","parameterTypes":[] },
       {"name":"loadClass","parameterTypes":["java.lang.String"] }
     ]
   },
   {
     "name": "io.netty.channel.unix.FileDescriptor",
-    "methods": [
-      { "name": "open", "parameterTypes": ["java.lang.String"] },
-      { "name": "close", "parameterTypes": ["int"] },
-      { "name": "write", "parameterTypes": ["int", "java.nio.ByteBuffer", "int", "int"] },
-      { "name": "writeAddress", "parameterTypes": ["int", "long", "int", "int"] },
-      { "name": "writev", "parameterTypes": ["int", "java.nio.ByteBuffer[]", "int", "int", "long"] },
-      { "name": "writevAddresses", "parameterTypes": ["int", "long", "int"] },
-      { "name": "read", "parameterTypes": ["int", "java.nio.ByteBuffer", "int", "int"] },
-      { "name": "readAddress", "parameterTypes": ["int", "long", "int", "int"] },
-      { "name": "newPipe" }
-    ]
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredClasses" : true,
+    "allPublicClasses" : true
   },
-  { 
+  {
     "name": "io.netty.channel.unix.ErrorsStaticallyReferencedJniMethods",
-    "methods": [
-      { "name": "errnoENOENT" },
-      { "name": "errnoEBADF" },
-      { "name": "errnoEPIPE" },
-      { "name": "errnoECONNRESET" },
-      { "name": "errnoENOTCONN" },
-      { "name": "errnoEAGAIN" },
-      { "name": "errnoEWOULDBLOCK" },
-      { "name": "errnoEINPROGRESS" },
-      { "name": "errorECONNREFUSED" },
-      { "name": "errorEISCONN" },
-      { "name": "errorEALREADY" },
-      { "name": "errorENETUNREACH" },
-      { "name": "strError", "parameterTypes": ["int"] }
-    ]
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredClasses" : true,
+    "allPublicClasses" : true
   },
   {
     "name": "io.netty.channel.epoll.Native",
-    "methods": [
-      { "name": "eventFd" },
-      { "name": "timerFd" },
-      { "name": "eventFdWrite", "parameterTypes": ["int", "long"] },
-      { "name": "eventFdRead" , "parameterTypes": ["int"] },
-      { "name": "timerFdRead" , "parameterTypes": ["int"] },
-      { "name": "epollCreate" },
-      { "name": "epollWait0" , "parameterTypes": ["int", "long", "int", "int", "int", "int"] },
-      { "name": "epollCtlAdd0" , "parameterTypes": ["int", "int",  "int"] },
-      { "name": "epollCtlMod0" , "parameterTypes": ["int",  "int", "int"] },
-      { "name": "epollCtlDel0" , "parameterTypes": ["int",  "int"] },
-      { "name": "splice0" , "parameterTypes": ["int", "long", "int", "long", "long"] },
-      { "name": "sendmmsg0" , "parameterTypes": ["int", "io.netty.channel.epoll.NativeDatagramPacketArray$NativeDatagramPacket[]", "int", "int"] },  
-      { "name": "sizeofEpollEvent" },
-      { "name": "offsetofEpollData" }
-    ]
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredClasses" : true,
+    "allPublicClasses" : true
   },
   {
     "name": "io.netty.channel.epoll.NativeStaticallyReferencedJniMethods",
-    "methods": [
-      { "name": "epollin" },
-      { "name": "epollout" },
-      { "name": "epollrdhup" },
-      { "name": "epollet" },
-      { "name": "epollerr" },
-      { "name": "ssizeMax" },
-      { "name": "tcpMd5SigMaxKeyLen" },
-      { "name": "iovMax" },
-      { "name": "uioMaxIov" },
-      { "name": "isSupportingSendmmsg" },
-      { "name": "isSupportingTcpFastopen" },
-      { "name": "kernelVersion" }
-    ]
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredClasses" : true,
+    "allPublicClasses" : true
   },
   {
     "name" : "io.netty.channel.epoll.LinuxSocket",
-    "methods" : [
-      { "name": "sendFile", "parameterTypes" : ["int", "io.netty.channel.DefaultFileRegion", "long", "long", "long"] },
-      { "name": "getTcpDeferAccept", "parameterTypes": ["int"] },
-      { "name": "isTcpQuickAck", "parameterTypes": ["int"] },
-      { "name": "isTcpCork", "parameterTypes": ["int"] },
-      { "name": "getTcpNotSentLowAt", "parameterTypes": ["int"] },
-      { "name": "getTcpKeepIdle", "parameterTypes": ["int"] },
-      { "name": "getTcpKeepIntvl", "parameterTypes": ["int"] },
-      { "name": "getTcpKeepCnt", "parameterTypes": ["int"] },
-      { "name": "getTcpUserTimeout", "parameterTypes": ["int"] },
-      { "name": "isIpFreeBind", "parameterTypes": ["int"] },
-      { "name": "isIpTransparent", "parameterTypes": ["int"] },
-      { "name": "getTcpInfo", "parameterTypes": ["int", "long[]"] },
-      { "name": "getPeerCredentials", "parameterTypes": ["int"] },
-      { "name": "isTcpFastOpenConnect", "parameterTypes": ["int"] },
-      { "name": "setTcpDeferAccept", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpQuickAck", "parameterTypes": ["int","int"] },
-      { "name": "setTcpCork", "parameterTypes": ["int","int"] },
-      { "name": "setTcpNotSentLowAt", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpFastOpen", "parameterTypes": ["int","int"] },
-      { "name": "setTcpFastOpenConnect", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpKeepIdle", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpKeepIntvl", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpKeepCnt", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpUserTimeout", "parameterTypes": ["int", "int"] },
-      { "name": "setIpFreeBind", "parameterTypes": ["int", "int"] },
-      { "name": "setIpTransparent", "parameterTypes": ["int", "int"] },
-      { "name": "setTcpMd5Sig", "parameterTypes": ["int", "byte[]", "int", "byte[]"] }
-    ]
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredClasses" : true,
+    "allPublicClasses" : true
   }
 ]

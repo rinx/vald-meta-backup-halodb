@@ -129,6 +129,14 @@ vald-meta-backup-halodb: \
 	--no-fallback \
 	--no-server \
 	--report-unsupported-elements-at-runtime \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.ReferenceCountedOpenSslEngine \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.util.ThreadLocalInsecureRandom \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2ServerUpgradeCodec \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.CleartextHttp2ServerUpgradeHandler \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http.websocketx.extensions.compression.DeflateDecoder \
+	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2ConnectionHandler \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.util.internal.logging.Log4JLogger \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.Native \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.channel.epoll.EpollEventArray \

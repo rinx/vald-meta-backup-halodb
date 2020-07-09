@@ -155,6 +155,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.shaded.io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider \
 	--initialize-at-run-time=io.grpc.netty.NettyServerBuilder \
 	--initialize-at-run-time=io.grpc.netty.NettyChannelBuilder \
+	--initialize-at-run-time=io.grpc.netty.NettyServer \
 	--initialize-at-run-time=io.grpc.netty.Utils \
 	--initialize-at-build-time \
 	--allow-incomplete-classpath \

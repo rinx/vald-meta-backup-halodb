@@ -2,45 +2,59 @@ package io.github.rinx.runtime;
 
 import sun.misc.Unsafe;
 import com.oracle.svm.core.annotate.Alias;
-import com.oracle.svm.core.annotate.RecomputeFieldValue;
-import com.oracle.svm.core.annotate.RecomputeFieldValue.Kind;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.SslProvider;
+
 import java.util.function.Predicate;
+import java.security.Provider;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-@TargetClass(className = "io.netty.buffer.AbstractReferenceCountedByteBuf", onlyWith = PlatformHasClass.class)
-final class Target_io_netty_buffer_AbstractReferenceCountedByteBuf {
-    @Alias
-    @RecomputeFieldValue(kind = Kind.FieldOffset, //
-            declClassName = "io.netty.buffer.AbstractReferenceCountedByteBuf", //
-            name = "refCnt") //
-    private static long REFCNT_FIELD_OFFSET;
-}
+@TargetClass(className = "io.grpc.netty.ProtocolNegotiators")
+final class Target_io_grpc_netty_ProtocolNegotiators {
 
-@TargetClass(className = "io.netty.util.AbstractReferenceCounted", onlyWith = PlatformHasClass.class)
-final class Target_io_netty_util_AbstractReferenceCounted {
-    @Alias
-    @RecomputeFieldValue(kind = Kind.FieldOffset, //
-            declClassName = "io.netty.util.AbstractReferenceCounted", //
-            name = "refCnt") //
-    private static long REFCNT_FIELD_OFFSET;
-}
-
-/**
- * A predicate to tell whether this platform includes the argument class.
- */
-final class PlatformHasClass implements Predicate<String> {
-    @Override
-    public boolean test(String className) {
-        try {
-            @SuppressWarnings({ "unused" })
-            final Class<?> classForName = Class.forName(className);
-            return true;
-        } catch (ClassNotFoundException cnfe) {
-            return false;
+    @Substitute
+    static void logSslEngineDetails(Level level, ChannelHandlerContext ctx, String msg, Throwable t) {
+        Logger log = Logger.getLogger("io.grpc.netty.ProtocolNegotiators");
+        if (log.isLoggable(level)) {
+            log.log(level, msg + "\nNo SSLEngine details available!", t);
         }
     }
+}
+
+@TargetClass(className = "io.grpc.netty.GrpcSslContexts")
+final class Target_io_grpc_netty_GrpcSslContexts {
+
+    @Substitute
+    public static SslContextBuilder configure(SslContextBuilder builder, SslProvider provider) {
+        switch (provider) {
+            case JDK: {
+                Provider jdkProvider = findJdkProvider();
+                if (jdkProvider == null) {
+                    throw new IllegalArgumentException(
+                            "Could not find Jetty NPN/ALPN or Conscrypt as installed JDK providers");
+                }
+                return configure(builder, jdkProvider);
+            }
+            default:
+                throw new IllegalArgumentException("Unsupported provider: " + provider);
+        }
+    }
+
+    @Alias
+    private static Provider findJdkProvider() {
+        return null;
+    }
+
+    @Alias
+    public static SslContextBuilder configure(SslContextBuilder builder, Provider jdkProvider) {
+        return null;
+    }
+
 }
 
 @TargetClass(className = "com.google.protobuf.UnsafeUtil")

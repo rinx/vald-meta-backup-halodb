@@ -12,7 +12,6 @@
                  [compojure "1.6.1"]
                  [io.forward/yaml "1.0.10"]
                  [clj-halodb "0.0.3"]
-                 [io.grpc/grpc-netty-shaded "1.30.2"]
                  [io.grpc/grpc-netty "1.30.2"]
                  [io.grpc/grpc-protobuf "1.30.2"]
                  [io.grpc/grpc-stub "1.30.2"]

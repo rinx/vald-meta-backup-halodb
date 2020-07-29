@@ -5,9 +5,9 @@ import com.oracle.svm.core.annotate.Alias;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 
-import io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext;
-import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
-import io.grpc.netty.shaded.io.netty.handler.ssl.SslProvider;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.SslProvider;
 
 import java.util.function.Predicate;
 import java.security.Provider;

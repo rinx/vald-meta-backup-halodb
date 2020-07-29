@@ -143,6 +143,7 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.netty.buffer.ByteBufAllocator \
 	--initialize-at-run-time=io.netty.buffer.ByteBufUtil \
 	--initialize-at-run-time=io.netty.buffer.AbstractReferenceCountedByteBuf \
+	--initialize-at-run-time=io.grpc.netty.Utils \
 	--allow-incomplete-classpath \
 	$(OPTS) \
 	-J-Dclojure.spec.skip-macros=true \

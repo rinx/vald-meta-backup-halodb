@@ -7,7 +7,7 @@
     ]
   },
   {
-    "name": "io.grpc.netty.shaded.io.netty.channel.unix.FileDescriptor",
+    "name": "io.netty.channel.unix.FileDescriptor",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
@@ -16,7 +16,7 @@
     "allPublicClasses" : true
   },
   {
-    "name": "io.grpc.netty.shaded.io.netty.channel.unix.ErrorsStaticallyReferencedJniMethods",
+    "name": "io.netty.channel.unix.ErrorsStaticallyReferencedJniMethods",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
@@ -25,7 +25,7 @@
     "allPublicClasses" : true
   },
   {
-    "name": "io.grpc.netty.shaded.io.netty.channel.epoll.Native",
+    "name": "io.netty.channel.epoll.Native",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
@@ -34,7 +34,7 @@
     "allPublicClasses" : true
   },
   {
-    "name": "io.grpc.netty.shaded.io.netty.channel.epoll.NativeStaticallyReferencedJniMethods",
+    "name": "io.netty.channel.epoll.NativeStaticallyReferencedJniMethods",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
@@ -43,7 +43,7 @@
     "allPublicClasses" : true
   },
   {
-    "name" : "io.grpc.netty.shaded.io.netty.channel.epoll.LinuxSocket",
+    "name" : "io.netty.channel.epoll.LinuxSocket",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,

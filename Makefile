@@ -130,15 +130,6 @@ vald-meta-backup-halodb: \
 	--no-server \
 	--report-unsupported-elements-at-runtime \
 	--initialize-at-build-time \
-	--initialize-at-run-time=io.netty.handler.ssl.OpenSsl \
-	--initialize-at-run-time=io.netty.internal.tcnative.SSL \
-	--initialize-at-run-time=io.netty.handler.ssl.ConscryptAlpnSslEngine \
-	--initialize-at-run-time=io.netty.util.internal.logging.Log4JLogger \
-	--initialize-at-run-time=io.netty.handler.ssl.ReferenceCountedOpenSslEngine \
-	--initialize-at-run-time=io.netty.handler.codec.http2.DefaultHttp2FrameWriter \
-	--initialize-at-run-time=io.netty.handler.codec.http2.Http2CodecUtil \
-	--initialize-at-run-time=io.netty.handler.ssl.util.ThreadLocalInsecureRandom \
-	--initialize-at-run-time=io.netty.internal.tcnative.CertificateVerifier \
 	--initialize-at-run-time=io.netty.buffer.PooledByteBufAllocator \
 	--initialize-at-run-time=io.netty.buffer.ByteBufAllocator \
 	--initialize-at-run-time=io.netty.buffer.ByteBufUtil \
@@ -147,7 +138,6 @@ vald-meta-backup-halodb: \
 	--initialize-at-run-time=io.grpc.netty.WriteBufferingAndExceptionHandler \
 	--initialize-at-run-time=io.grpc.netty.NettyServerHandler \
 	--initialize-at-run-time=io.grpc.netty.NettyClientHandler \
-	--initialize-at-run-time=io.grpc.netty.NettyHandlerTestBase \
 	--allow-incomplete-classpath \
 	$(OPTS) \
 	-J-Dclojure.spec.skip-macros=true \
